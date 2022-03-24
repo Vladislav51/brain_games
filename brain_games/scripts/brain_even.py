@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 from brain_games.cli import welcome_user
- 
-
 import prompt
 import random
 
@@ -12,7 +10,7 @@ def games(n):
         return 1
     if even() == 0:
         return 0
-    return(games(n-1))
+    return(games(n - 1))
 
 
 def even():
@@ -26,7 +24,7 @@ def even():
     if answer == true_answer:
         print('Correct!')
         return 1
-    print(answer + "  is wrong answer ;(. Correct answer was '{}'.".format(true_answer))
+    print("{} is wrong answer ;(. Correct answer was '{}'.".format(answer, true_answer))  # noqa: E501
     return 0
 
 
@@ -36,9 +34,8 @@ def main():
     print('Answer "yes" if the number is even, otherwise answer "no".')
     if games(3) == 1:
         print('Congratulations, {}!'.format(name))
-    else: 
+    else:
         print("Let's try again, {}!".format(name))
-
 
 
 if __name__ == '__main__':

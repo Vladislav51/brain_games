@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 
-import prompt
-
-
-
 def main():
     print("Welcome to the Brain Games!")
 

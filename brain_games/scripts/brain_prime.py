@@ -22,13 +22,23 @@ def nod(a, b):
     return(a + b)
 
 
+def isprime(a, b):
+    if b == 1:
+        return 1
+    if nod(a, b) == 1:
+        return isprime(a, b-1)
+    return 0
+
+
 def game():
     random_valueA = random.randint(1, 200)
-    random_valueB = random.randint(1, 200)
-    print('Question:{} {}'.format(random_valueA, random_valueB))
+    print('Question:{}'.format(random_valueA))
     answer = prompt.string('Your answer:')
-    true_answer = nod(random_valueA, random_valueB)
-    if int(answer) == true_answer:
+    if isprime(random_valueA, random_valueA - 2):
+        true_answer = 'yes'
+    else:
+        true_answer = 'no'
+    if answer == true_answer:
         print('Correct!')
         return 1
     print("{} is wrong answer ;(. Correct answer was '{}'.".format(answer, true_answer))  # noqa: E501
@@ -38,7 +48,7 @@ def game():
 def main():
     print('Welcome to the Brain Games!')
     name = welcome_user()
-    print('Find the greatest common divisor of given numbers.')
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
     if games(3) == 1:
         print('Congratulations, {}!'.format(name))
     else:
