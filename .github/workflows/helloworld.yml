@@ -6,4 +6,4 @@ jobs:
     steps:
       - name: Run linter
         run: |
-          make brain-games
+                poetry run flake8 brain_games 
