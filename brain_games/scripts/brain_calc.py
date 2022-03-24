@@ -1,19 +1,11 @@
 #!/usr/bin/env python
 
-from brain_games.cli import welcome_user
+from brain_games.brain_games_lib import initstart
 import prompt
 import random
 
 
-def games(n):
-    if n == 0:
-        return 1
-    if calc() == 0:
-        return 0
-    return(games(n - 1))
-
-
-def calc():
+def game():
     random_valueA = random.randint(1, 25)
     random_valueB = random.randint(1, 25)
     random_sign = random.randint(1, 3)
@@ -36,13 +28,8 @@ def calc():
 
 
 def main():
-    print('Welcome to the Brain Games!')
-    name = welcome_user()
-    print('What is the result of the expression?')
-    if games(3) == 1:
-        print('Congratulations, {}!'.format(name))
-    else:
-        print("Let's try again, {}!".format(name))
+    rules = 'What is the result of the expression?'
+    initstart(rules, game)
 
 
 if __name__ == '__main__':

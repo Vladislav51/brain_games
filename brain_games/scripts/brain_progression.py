@@ -1,16 +1,8 @@
 #!/usr/bin/env python
 
-from brain_games.cli import welcome_user
+from brain_games.brain_games_lib import initstart
 import prompt
 import random
-
-
-def games(n):
-    if n == 0:
-        return 1
-    if game() == 0:
-        return 0
-    return(games(n - 1))
 
 
 def game():
@@ -34,13 +26,8 @@ def game():
 
 
 def main():
-    print('Welcome to the Brain Games!')
-    name = welcome_user()
-    print('What number is missing in the progression?')
-    if games(3) == 1:
-        print('Congratulations, {}!'.format(name))
-    else:
-        print("Let's try again, {}!".format(name))
+    rules = 'What number is missing in the progression?'
+    initstart(rules, game)
 
 
 if __name__ == '__main__':
