@@ -4,8 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run linter
-        run: |
-        
-                pip install poetry
-                poetry run flake8 brain_games 
+    - uses: actions/checkout@v2
+    - name: Run linter
+      run: |        
+        pip install poetry
+        poetry run flake8 brain_games 
