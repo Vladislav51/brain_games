@@ -1,9 +1,9 @@
 name: hello-world
 on: push
 jobs:
-  my-job:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
+      - name: Run linter
         run: |
-                make lint
+          make lint
